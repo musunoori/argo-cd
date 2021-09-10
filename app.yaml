@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bookinfo
+  namespace: app-bookinfo
+spec:
+    project: default
+  source:
+    repoURL: https://github.com/musunoori/argo-cd.git
+    targetRevision: HEAD
+    path: app-bookinfo
+    directory:
+      recurse: true
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: app-bookinfo
+    syncPolicy:
+      automated:
+        prune: false
+        selfHeal: false
