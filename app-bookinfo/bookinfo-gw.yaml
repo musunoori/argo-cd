@@ -1,0 +1,14 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: bookinfo
+  namespace: app-bookinfo
+spec:
+  selector:
+    istio: istio-ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: bookinfo
+      protocol: HTTP
+    hosts: bookinfo.example
