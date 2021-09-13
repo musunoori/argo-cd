@@ -11,4 +11,5 @@ spec:
       number: 8080
       name: bookinfo
       protocol: HTTP
-    hosts: bookinfo.example
+    hosts: 
+    - bookinfo.example
